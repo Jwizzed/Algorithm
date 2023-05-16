@@ -1,0 +1,25 @@
+# Next Larger
+Complete the function next_larger that takes in a positive integer n and an array a[] of n positive integers. For each element in a[], find the next element (to its right, but as early as possible) in the array that is larger than it, or -1 if no such element exists. Put the result in the array b[]. For example:
+input:
+9
+10 7 8 6 3 2 5 9 4
+
+output:
+-1
+8
+9
+9
+5
+5
+9
+-1
+-1
+
+# Postfix Notation
+Complete the program that takes in a positive integer n, followed by an expression written in postfix notation consisting of n items which are either positive integers or symbols +, -, *, or /, then evaluate the expression. For example:
+input:
+9
+20 8 2 + / 9 4 - *
+
+output:
+10
