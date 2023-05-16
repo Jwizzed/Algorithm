@@ -1,0 +1,74 @@
+# basic_pointer
+Fill in the code so that the program outputs
+output:
+1
+4
+4
+3
+2
+
+# passing array
+input:
+5
+1 2 3 4 5
+
+output:
+max = 5
+min = 1
+
+# list node1
+Fill in the missing code that assigns next pointers to make a linked list so that the program prints out:
+output:
+1
+7
+10
+20
+32
+
+# list node2
+The following program reads integers until it gets 0. It prints the inputs backwards. The key function is insert_front that takes a pointer to the header node and inserts a new node containing x right after the header.
+input:
+1
+3
+5
+2
+0
+
+output:
+2
+5
+3
+1
+
+# list node3
+In previous tasks, we created many list nodes but did not destroy them. That would lead to memory leak. In this task, we will write function freeList that takes the header of a list and free every node in the list (including the header).
+
+To check that you free the nodes, the code below tests if a newly allocated node is close to the first one. This test is not perfect but it should work most of the time.
+
+# Linked list with tail
+We will append new elements to the list. To do so efficiently, we need to keep track of the list's tail. We add new private member tail to do so. Using the tail pointer, we can implement function append.
+
+The program below reads t the number of operations, then reads t commands. Each command either starts with 1 (insert_front) or 2 (append) and the next integer specifies the value.
+input:
+5
+1 30
+2 100
+1 20
+2 50
+2 400
+
+output:
+20
+30
+100
+50
+400
+
+# Funtion delete_front
+Write function get_front and delete_front.
+
+get_front returns the value of the first node in the list
+delete_front removes the first node in the list. This function throws an exception if the list is empty.
+In function delete_front below the code for checking list emptiness and for deleted the front node is already included.
+
+Notes: Don't forget to handle the tail pointer properly when deleting the front node.
