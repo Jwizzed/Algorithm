@@ -1,0 +1,25 @@
+The goal for this problem is to find a (contiguous) subarray of the given array with the highest sum possible. If the input array can only contain non-negative integers, then the problem is trivial, because the whole array would contain the highest sum possible. However, the input array can actually contain negative integers.
+
+Even if, in fact, there is an O(n) algorithm that solves this problem, in this lab we shall look at an O(n log n) divide-and-conquer algorithm, which is still faster than brute-force approaches that look at all possible subarrays.
+
+The main idea of the divide-conquer approach to this problem is to, of course, first divide the array in half and recursively solve the problem in each half. Thus, we have found the highest sums of subarrays that lie entirely in either half; we can take the one with higher value. However, we have not considered subarrays that straddle across the division line.
+
+Consider the array A[1,..,n], and let's break it into A[1,..,m] and A[m+1,..,n] where m=n/2. The subarrays that are not considered in the recursive calls are those that contains elements from both halves. Those subarrays will contain a portion from either half; specifically, it consists of some suffix A[l,..m] from the first half, and some prefix A[m+1,..,r] from the second half.
+
+To find the best subarray the lies across two halves, we find the best possible suffix of A[1,..,m] in linear time, and we find the best possible prefix of A[m+1,..,n] in linear time. We then join those two pieces together.
+
+Do not forget that the best subarray is the best one from (a) subarrays that are entirely in the first half, (b) subarrays that are entirely in the second half, and (c) subarrays that go across both halves.
+
+The running time of the algorithm is T(n)=2T(n/2)+O(n), which means T(n)=O(n log n).
+
+#Exercise
+
+The code below implements the algorithm above. It reads an integer n, followed n integers describing the contents of the array. Complete the blanks.
+
+>>>10
+>>>175 -473 215 810 -880 800 377 -235 -482 569
+1322
+
+>>>10
+>>>-612 491 -153 -758 697 -878 838 -107 628 -759
+1359
